@@ -11,17 +11,17 @@ Note: I recommend to use a local install for larger diagrams, see https://github
 
 Rendering requires a call to the online plant server, there are a few methods available: -
 - Render inline encode plantuml stream (png/svg) to endpoint ```http://www.plantuml.com/plantuml/png/{stream}```
-- Render remote file ```http://www.plantuml.com/plantuml/proxy?idx=0&src=<{raw github location}>```
+- Render remote file ```http://www.plantuml.com/plantuml/proxy?idx=0&src={url encoded(raw github location})```
 
 
 So if the raw github location of the puml file is https://raw.githubusercontent.com/hoggmania/plantuml-setup/master/test.puml the encode markup is: -
 ```
-![Example](http://www.plantuml.com/plantuml/proxy?idx=0&src=<https://raw.githubusercontent.com/hoggmania/plantuml-setup/master/test.puml> "Example")
+![Example](http://www.plantuml.com/plantuml/proxy?idx=0&src=https%3A%2F%2Fraw.githubusercontent.com%2Fhoggmania%2Fplantuml-setup%2Fmaster%2Ftest.puml "Example")
 ```
 
 This example renders the following image:
 
-![Example](http://www.plantuml.com/plantuml/proxy?idx=0&src=<https://raw.githubusercontent.com/hoggmania/plantuml-setup/master/test.puml> "Example")
+![Example](http://www.plantuml.com/plantuml/proxy?idx=0&src=https%3A%2F%2Fraw.githubusercontent.com%2Fhoggmania%2Fplantuml-setup%2Fmaster%2Ftest.puml "Example")
 
 
 ## Using include files to change styles
