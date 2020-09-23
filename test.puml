@@ -1,0 +1,42 @@
+@startuml
+!define PUML https://raw.githubusercontent.com/hoggmania/plantuml-stdlib/master
+!include PUML/puml-themes.iuml /' Contains styling '/
+!include PUML/puml-methods.iuml /' Contains sequence diagram macros '/
+
+/'Local Styling additions or overrides'/
+skinparam node {
+    backgroundColor<<Client>> LightSlateGrey
+}
+skinparam component {
+    backgroundColor<<Client>> Coral
+}
+
+/'Define Actors'/
+Actor ActorIT as "IT"
+Actor ActorStaff as "Staff"
+
+/'Runtime'/
+Node Runtime <<Client>>{
+
+    Node RuntimeKeyCloak <<IAM>> as "KeyCloak" {
+        component RuntimeAdminRealm <<Client>>
+        component RuntimeStaffRealms <<Client>>
+        RuntimeAdminRealm --> RuntimeStaffRealms: manage
+        RuntimeAdminRealm ..> RuntimeStaffRealms: provision\nstaff
+    }
+
+    Node Applications <<Runtime>> {
+        component Backend <<Client>>
+        component UserAdmin <<Client>> {
+            UserAdmin .> RuntimeStaffRealms: provision\n<<SCIM>>
+        }
+        RuntimeStaffRealms --> Applications: SSO manage
+    }
+
+    ActorStaff -> RuntimeStaffRealms: authenticates
+    ActorStaff -> Applications: SSO & Manage
+
+    ActorIT -> RuntimeAdminRealm: Authenticates & manages
+}
+
+@enduml
