@@ -8,9 +8,8 @@ Show how to setup Plantuml in VSCode and publish diagrams in Github
 ## Markup Rendering
 
 Rendering requires a call to the online plant server, there are a few methods available: -
-- Render inline encode plantuml stream (png/svg) to endpoint 
-  ```http://www.plantuml.com/plantuml/png/{stream}```
-- Render remote file http://www.plantuml.com/plantuml/proxy?idx=0&src=<UrlEncoded(file location)>
+- Render inline encode plantuml stream (png/svg) to endpoint ```http://www.plantuml.com/plantuml/png/{stream}```
+- Render remote file ```http://www.plantuml.com/plantuml/proxy?idx=0&src={UrlEncoded(file location)}```
 
 
 So if the puml file is located 
