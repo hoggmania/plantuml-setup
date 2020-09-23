@@ -24,14 +24,44 @@ This example renders the following image:
 
 ## Using include files to change styles
 
-Example of usage:
+If you look at the file https://raw.githubusercontent.com/hoggmania/plantuml-setup/master/test.puml you will see it has pre-processing files that it includes, for macros and styling.
+
+Example includes:
 ```
 @startuml
 !define PUML https://raw.githubusercontent.com/hoggmania/plantuml-stdlib/master
-!include PUML/puml-themes.iuml
-!include PUML/puml-methods.iuml
+!include PUML/puml-themes.iuml /' Contains styling '/
+!include PUML/puml-methods.iuml /' Contains sequence diagram macros '/
+.
+.
+.
 
-
-
-@enduml
 ```
+
+These includes can be added to, or overriden locally within the file such as: -
+
+```
+/'Local Styling additions or overrides'/
+skinparam node {
+    backgroundColor<<Client>> LightSlateGrey
+}
+skinparam component {
+    backgroundColor<<Client>> Coral
+}
+```
+
+These stereo types ```<<Client>>``` can then be tagged onto a node/component: -
+
+```
+    Node Applications <<Runtime>> {
+        component Backend <<Client>>
+        component UserAdmin <<Client>> {
+            UserAdmin .> RuntimeStaffRealms: provision\n<<SCIM>>
+        }
+        RuntimeStaffRealms --> Applications: SSO manage
+    }
+```
+
+
+
+
