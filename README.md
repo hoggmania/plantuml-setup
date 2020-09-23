@@ -34,6 +34,15 @@ Example of usage:
 
 @enduml
 ```
+So if the puml file is located 
+```
+
+![Example](http://www.plantuml.com/plantuml/proxy?idx=0&src=<UrlEncoded(file.puml)> "Example")
+```
+
+This example renders the following image:
+
+![Example](http://www.plantuml.com/plantuml/proxy?idx=0&src=https%3A%2F%2Fraw.githubusercontent.com%2Fhoggmania%2Fplantuml-setup%2Fmaster%2Ftest.puml "Example")
 
 This example renders the following image:
 
