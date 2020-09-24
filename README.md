@@ -4,7 +4,7 @@ Show how to setup Plantuml in VSCode and publish diagrams in Github
 - Install VSCode
 - [Install Plantuml plugin](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
 
-Note: I recommend to use a local install for larger diagrams, see https://github.com/qjebbs/vscode-plantuml#requirements-for-local-render for details on installing and config of the plugin
+Note: I recommend to use a local install for for speed (x15) & especially for larger diagrams, see https://github.com/qjebbs/vscode-plantuml#requirements-for-local-render for details on installing and config of the plugin
 
 
 ## Markup Rendering
