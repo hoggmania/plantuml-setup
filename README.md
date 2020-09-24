@@ -9,10 +9,10 @@ Note: I recommend to use a local install for for speed (x15) & especially for la
 
 ## Markup Rendering
 
-There are two methods of rendering, static or dynamic. Dynamic is useful for every changing diagrams, but does place a great burnden on the wiki (make the external call out) and the plantuml.com servers. If your diagrams don't change, or are managed in the same location as the plantuml file, I would highly recommend using the static method, so to be a good citizen of the fantastic service from plantuml.com
+There are two methods of rendering, static or dynamic. Dynamic is useful for every changing diagrams, but does place a great burnden on the wiki (make the external call out) and the plantuml.com servers. If your diagrams don't change, or are managed in the same location as the plantuml file, <ins>I would highly recommend using the static method, so to be a good citizen of the fantastic service from plantuml.com</ins>
 
 ### Static Rendering
-Static rendering is the porcess of producing a static PNG or SVG and storing alongside the PUML source file. This is easily achievd with the VSCode Plantuml plugin as follows: -
+Static rendering is the process of producing a static PNG or SVG and storing alongside the PUML source file in SCM. This is easily achievd with the VSCode Plantuml plugin as follows: -
 
 ![Plugin](export_demo.gif "Plugin")
 
