@@ -9,7 +9,15 @@ Note: I recommend to use a local install for larger diagrams, see https://github
 
 ## Markup Rendering
 
-Rendering requires a call to the online plant server, there are a few methods available: -
+There are two methods of rendering, static or dynamic. Dynamic is useful for every changing diagrams, but does place a great burnden on the wiki (make the external call out) and the plantuml.com servers. If your diagrams don't change, or are managed in the same location as the plantuml file, I would highly recommend using the static method, so to be a good citizen of the fantastic service from plantuml.com
+
+### Static Rendering
+Static rendering is the porcess of producing a static PNG or SVG and storing alongside the PUML source file. This is easily achievd with the VSCode Plantuml plugin with the
+
+
+
+### Dynamic Rendering
+Dynamic rendering requires a call to the online plant server, there are a few methods available: -
 - Render inline encode plantuml stream (png/svg) to endpoint ```http://www.plantuml.com/plantuml/png/{stream}```
 - Render remote file ```http://www.plantuml.com/plantuml/proxy?idx=0&src={url encoded(raw github location})```
 
