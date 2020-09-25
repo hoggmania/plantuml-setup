@@ -22,17 +22,17 @@ The result is the same, but remains static and can be then used externally in ot
 ### Dynamic Rendering
 Dynamic rendering requires a call to the online plant server, there are a few methods available: -
 - Render inline encode plantuml stream (png/svg) to endpoint ```http://www.plantuml.com/plantuml/png/{stream}```
-- Render remote file ```http://www.plantuml.com/plantuml/proxy?idx=0&src={url encoded(raw github location})```
+- Render remote file ```http://www.plantuml.com/plantuml/proxy?idx=0&src={raw github location}&fmt=svg&sanitize=true```
 
 
 So if the raw github location of the puml file is https://raw.githubusercontent.com/hoggmania/plantuml-setup/master/test.puml the encode markup is: -
 ```
-![Example](http://www.plantuml.com/plantuml/proxy?idx=0&src=https%3A%2F%2Fraw.githubusercontent.com%2Fhoggmania%2Fplantuml-setup%2Fmaster%2Ftest.puml "Example")
+![Flow](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/hoggmania/plantuml-setup/master/test.puml&fmt=svg&sanitize=true "Flow")
 ```
 
 This example renders the following image:
 
-![Example](http://www.plantuml.com/plantuml/proxy?idx=0&src=https%3A%2F%2Fraw.githubusercontent.com%2Fhoggmania%2Fplantuml-setup%2Fmaster%2Ftest.puml "Example")
+![Flow](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/hoggmania/plantuml-setup/master/test.puml&fmt=svg&sanitize=true "Flow")
 
 
 ## Using include files to change styles
@@ -74,7 +74,3 @@ These stereo types ```<<Client>>``` can then be tagged onto a node/component: -
         RuntimeStaffRealms --> Applications: SSO manage
     }
 ```
-
-
-
-
